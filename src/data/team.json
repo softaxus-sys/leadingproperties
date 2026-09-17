@@ -1,0 +1,18 @@
+[
+  { "name": "Saira Bano", "role": "Administrative Officer", "image": "/images/team/saira.webp" },
+  { "name": "Natasha Murray", "role": "Operational Manager", "image": "/images/team/natasha.webp" },
+  { "name": "Mohsin Khalid", "role": "Public Relation Executive", "image": "/images/team/mohsin.png" },
+  { "name": "Ejaz Ahmed", "role": "Property Advisor", "image": "/images/team/ejaz.jpeg" },
+  { "name": "Nida Laraib", "role": "Property Consultant", "image": "/images/team/nida.webp" },
+  { "name": "Muhammad Mumtaz", "role": "Property Consultant", "image": "/images/team/mumtaz.webp" },
+  { "name": "Hanzla Shafique", "role": "Property Consultant", "image": "/images/team/hanzla.webp" },
+  { "name": "Junaid", "role": "Property Consultant", "image": "/images/team/junaid.png" },
+  { "name": "Faiq Ibrahim", "role": "Property Consultant", "image": "/images/team/faiq.png" },
+  { "name": "Atta ur Rehman", "role": "Property Advisor", "image": "/images/team/atta.png" },
+  { "name": "Sushmita", "role": "Property Consultant", "image": "/images/team/sushmita.png" },
+  { "name": "Ahsan", "role": "Property Consultant", "image": "/images/team/ahsan.png" },
+  { "name": "Irfan", "role": "Property Consultant", "image": "/images/team/irfan.png" },
+  { "name": "Shakila", "role": "Property Consultant", "image": "/images/team/shakila.png" },
+  { "name": "Aqeela", "role": "Property Consultant", "image": "/images/team/aqeela.jpg" },
+  { "name": "Shanz", "role": "Property Consultant", "image": "/images/team/shanz.png" }
+]

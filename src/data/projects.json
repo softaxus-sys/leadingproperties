@@ -1,0 +1,118 @@
+[
+  {
+    "slug": "tilal-binghatti",
+    "name": "Tilal Binghatti",
+    "developer": "Binghatti",
+    "headline": "Where the Hills Meet the Skyline",
+    "location": "Dubai Academic City",
+    "unitTypes": "4–6 Bed Villas & Mansions",
+    "summary": "Binghatti's fluted architectural signature brought down to earth, across a 621,815+ sqm Phase 1 masterplan of 4 to 6 bedroom villas and mansions.",
+    "description": [
+      "Tilal Binghatti takes its name from the Arabic word for hills — a residence defined by the same fluted, sculptural facades that have made Binghatti's skyline instantly recognisable, set within reach of the city's everyday rhythm.",
+      "For the first time, Binghatti's architectural signature takes root in the soil across a 621,815+ sqm Phase 1 masterplan: a self-contained, walkable district of 4 to 6 bedroom villas and mansions.",
+      "Every residence shares the same brief: 4M floor-to-ceiling heights, 8M double-height living areas, and a material palette of marble, wood veneer and champagne hairline metal that carries from the facade into each home."
+    ],
+    "highlights": [
+      { "title": "Delivered Landscaped Gardens", "text": "Villas hand over grass-landscaped, not sand — no post-handover finishing burden." },
+      { "title": "Prime Location", "text": "10 minutes from Meydan Racecourse and Dubai's Downtown-bound road network." },
+      { "title": "50+ Amenities", "text": "Pearl Beach, Alwaha swimmable lakes, a clubhouse and a 1.6km cycling & jogging track." },
+      { "title": "20,000+ Trees", "text": "Central parks, green corridors and shaded walkways across the masterplan." },
+      { "title": "The Sunken Pearl", "text": "A 12,000 sqm artificial shore with a wave-generation system." },
+      { "title": "Smart Home & Security", "text": "Integrated smart home technology, EV charging and gated, secure clusters." }
+    ],
+    "distances": [
+      { "place": "Meydan Racecourse", "time": "10 min" },
+      { "place": "Dubai Creek Harbour", "time": "15 min" },
+      { "place": "Burj Khalifa & Dubai Mall", "time": "17 min" },
+      { "place": "DXB International Airport", "time": "18 min" },
+      { "place": "Museum of the Future", "time": "20 min" },
+      { "place": "Palm Jumeirah", "time": "35 min" }
+    ],
+    "images": ["/images/projects/binghatti-1.webp", "/images/projects/binghatti-2.webp", "/images/projects/binghatti-3.webp"],
+    "featured": true
+  },
+  {
+    "slug": "binghatti-flare",
+    "name": "Binghatti Flare",
+    "developer": "Binghatti",
+    "headline": "Binghatti Flare",
+    "location": "Dubai",
+    "unitTypes": null,
+    "summary": "A new residential launch by Binghatti. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": ["/images/projects/flare-1.jpg", "/images/projects/flare-2.webp", "/images/projects/flare-3.jpg", "/images/projects/flare-4.jpg"],
+    "featured": true
+  },
+  {
+    "slug": "binghatti",
+    "name": "Binghatti",
+    "developer": "Binghatti",
+    "headline": "Binghatti Developments",
+    "location": "Dubai",
+    "unitTypes": null,
+    "summary": "Explore current Binghatti developments with Leading Properties. Contact our advisors for availability and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": ["/images/projects/binghatti-4.jpg", "/images/projects/binghatti-2.webp", "/images/projects/binghatti-3.webp"],
+    "featured": false
+  },
+  {
+    "slug": "damac",
+    "name": "Damac",
+    "developer": "Damac Properties",
+    "headline": "Damac Properties",
+    "location": "Dubai",
+    "unitTypes": null,
+    "summary": "Explore current Damac developments with Leading Properties. Contact our advisors for availability and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": ["/images/projects/damac-1.jpg", "/images/projects/damac-2.jpg", "/images/projects/damac-3.webp", "/images/projects/damac-4.jpg"],
+    "featured": true
+  },
+  {
+    "slug": "meraas",
+    "name": "Meraas",
+    "developer": "Meraas",
+    "headline": "Meraas",
+    "location": "Dubai",
+    "unitTypes": null,
+    "summary": "Explore current Meraas developments, including Bluewaters Bay, with Leading Properties.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": ["/images/projects/meraas-1.webp", "/images/projects/meraas-2.webp", "/images/projects/meraas-3.webp", "/images/projects/meraas-4.webp"],
+    "featured": true
+  },
+  {
+    "slug": "sobha",
+    "name": "Sobha",
+    "developer": "Sobha Realty",
+    "headline": "Sobha Realty",
+    "location": "Dubai",
+    "unitTypes": null,
+    "summary": "Explore current Sobha Realty developments with Leading Properties. Contact our advisors for availability and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": ["/images/projects/sobha-1.webp", "/images/projects/sobha-2.png", "/images/projects/sobha-3.jpg", "/images/projects/sobha-4.webp"],
+    "featured": false
+  },
+  {
+    "slug": "reportage",
+    "name": "Reportage",
+    "developer": "Reportage Properties",
+    "headline": "Reportage Properties",
+    "location": "Dubai",
+    "unitTypes": null,
+    "summary": "Explore current Reportage developments with Leading Properties. Contact our advisors for availability and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": ["/images/projects/reportage-1.jpg", "/images/projects/reportage-2.jpg", "/images/projects/reportage-3.webp", "/images/projects/reportage-4.webp"],
+    "featured": false
+  }
+]

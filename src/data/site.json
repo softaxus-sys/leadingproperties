@@ -1,0 +1,56 @@
+{
+  "name": "Leading Properties",
+  "legalName": "Leading Properties Dubai",
+  "tagline": "Trust the Expert",
+  "description": "Leading Properties is a Dubai real estate consultancy helping clients buy, sell, rent and invest in residential and commercial property across the UAE.",
+  "yearsInBusiness": 9,
+  "contact": {
+    "phone": "+97142445777",
+    "phoneDisplay": "+971 4 244 5777",
+    "whatsapp": "971586015987",
+    "email": "info@leadingproperties.ae",
+    "address": "The Binary by OMNIYAT, Office 712, 7th Floor, Business Bay, Dubai, United Arab Emirates",
+    "mapQuery": "The Binary by OMNIYAT Business Bay Dubai"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BusinessGroupLeadingProperties/",
+    "instagram": "https://www.instagram.com/leadingproperties.ae/",
+    "tiktok": "https://www.tiktok.com/@leadingproperties",
+    "linkedin": "https://www.linkedin.com/company/80988073/"
+  },
+  "ceo": {
+    "name": "Zaheer Alam",
+    "title": "Founder & CEO",
+    "image": "/images/site/ceo.jpg",
+    "message": "Real estate is more than just transactions, it's about fulfilling dreams and building lasting relationships. Our dedicated team delivers trusted, transparent, and tailored solutions to exceed your expectations. Thank you for choosing Leading Properties as your real estate partner."
+  },
+  "reviews": {
+    "rating": "Excellent",
+    "count": 51,
+    "source": "Google",
+    "items": [
+      {
+        "author": "Jamal Ahmad",
+        "text": "I had an excellent experience with Leading Properties Real Estate. The entire transaction was handled with utmost professionalism. A special thanks to Mumtaz, whose patience, deep market knowledge, and support with documentation were truly exceptional."
+      },
+      {
+        "author": "Kalsoom Durrani",
+        "text": "I had an outstanding experience with LeadingProperties.ae. Their team is highly professional, knowledgeable, and genuinely committed to providing top-tier real estate services in Dubai. From the very first inquiry to the final closing, the process was smooth, transparent, and efficient."
+      },
+      {
+        "author": "Mahmood Khan",
+        "text": "The quality of their work is amazing. Highly recommended."
+      }
+    ]
+  },
+  "developers": [
+    { "name": "Emaar", "logo": "/images/developers/emaar.png" },
+    { "name": "Damac", "logo": "/images/developers/damac.png" },
+    { "name": "Meraas", "logo": "/images/developers/meraas.png" },
+    { "name": "Sobha Realty", "logo": "/images/developers/sobha.png" },
+    { "name": "Reportage", "logo": "/images/developers/reportage.webp" },
+    { "name": "Azizi", "logo": "/images/developers/azizi.webp" },
+    { "name": "BT Properties", "logo": "/images/developers/bt-properties.png" },
+    { "name": "Property Finder", "logo": "/images/developers/property-finder.png" }
+  ]
+}
