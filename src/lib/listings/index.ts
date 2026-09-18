@@ -1,12 +1,14 @@
-import { jsonSource } from "./json-source";
 import { vroduxSource } from "./vrodux-source";
 import type { Listing, ListingFilters, ListingsSource } from "./types";
 
 export type * from "./types";
 
-/** The single switch between local JSON and the Vrodux API. Pages only import from here. */
+/**
+ * Listings come only from Vrodux ERP (Real Estate → Website). Pages only import from here, so
+ * another source can be added later by implementing ListingsSource and switching it in.
+ */
 function source(): ListingsSource {
-  return process.env.LISTINGS_SOURCE === "vrodux" ? vroduxSource : jsonSource;
+  return vroduxSource;
 }
 
 export const getListings = () => source().getAll();

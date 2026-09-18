@@ -1,7 +1,8 @@
 # Leading Properties — website
 
 Next.js (App Router) + TypeScript + Tailwind CSS + lucide-react. No database, no CMS, no auth,
-no backend. Content lives in JSON files; images in `public/images/`.
+no backend. Property listings come from Vrodux ERP; the rest of the content (projects, team,
+company details) lives in JSON files, images in `public/images/`.
 
 Rebuilt from the old WordPress site (mirror in `../ExistingWebsite`): its copy, listings, team,
 reviews, developer logos and photography were carried over.
@@ -19,40 +20,35 @@ npm run build && npm start
 
 | File | What |
 |---|---|
-| `src/data/properties.json` | Listings (rent / sale, residential / commercial) |
 | `src/data/projects.json` | New / off-plan projects |
 | `src/data/team.json` | Sales team |
 | `src/data/site.json` | Company details, contact, socials, CEO message, reviews, developer logos |
 
-Listing notes: `price` is AED, annual for rentals, `null` = price on request. `bedrooms: 0` =
-studio, `null` = not applicable (offices). `area` is sq.ft. The first image is the cover. Never
-reuse a `slug` for a different unit.
+## Listings: from Vrodux ERP
 
-## Listings: JSON today, Vrodux API later
-
-Pages never read the JSON directly — they call `getListings()` / `getListing(slug)` from
-`src/lib/listings`, which picks a source:
+Pages never call the API directly — they call `getListings()` / `getListing(slug)` from
+`src/lib/listings`:
 
 ```
 src/lib/listings/
   types.ts          Listing type + ListingsSource interface (the contract)
-  json-source.ts    reads src/data/properties.json            (LISTINGS_SOURCE=json, default)
-  vrodux-source.ts  reads the Vrodux Real Estate public API   (LISTINGS_SOURCE=vrodux)
-  index.ts          chooses the source; filtering/sorting shared by both
+  vrodux-source.ts  reads the Vrodux Real Estate website API
+  index.ts          selects the source; filtering and sorting
 ```
 
-To switch, set in `.env.local` (or the host's environment) and redeploy:
+Set in `.env.local` (or the host's environment):
 
 ```
-LISTINGS_SOURCE=vrodux
 VRODUX_API_URL=https://erp.vrodux.com
-VRODUX_TENANT_SLUG=<the tenant's slug in Vrodux>
+VRODUX_API_KEY=<key from Vrodux ERP → Real Estate → Website>
 VRODUX_REVALIDATE_SECONDS=300
 ```
 
-The adapter calls `GET /api/real-estate/public/{tenantSlug}/properties` and turns every unit
-with an asking rent or sale price into a listing; photos come from the API's image endpoint
-(its host is allowed for `next/image` automatically from `VRODUX_API_URL`). Pages are cached and
+The adapter calls `GET /api/real-estate/website/properties` with the key in the `X-Api-Key`
+header, and turns every unit with an asking rent or sale price into a listing. The key belongs
+to one workspace and is locked to one website address in the ERP; keep it in server
+environment variables only. Photos use the signed URLs the API returns (their host is allowed
+for `next/image` automatically from `VRODUX_API_URL`). Pages are cached and
 refetched every `VRODUX_REVALIDATE_SECONDS`.
 
 Before switching production over, check against a real response: the unit of

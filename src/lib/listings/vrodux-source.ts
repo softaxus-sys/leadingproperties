@@ -1,16 +1,20 @@
 import type { Listing, ListingsSource } from "./types";
 
 /**
- * Listings from the Vrodux Real Estate public API:
- *   GET {VRODUX_API_URL}/api/real-estate/public/{tenantSlug}/properties
- *   GET {VRODUX_API_URL}/api/real-estate/public/{tenantSlug}/properties/{id}/images/{imageId}
+ * Listings from the Vrodux Real Estate website API:
+ *   GET {VRODUX_API_URL}/api/real-estate/website/properties     (header X-Api-Key)
+ *
+ * The API key is generated in Vrodux ERP under Real Estate → Website. It identifies the
+ * workspace, so only that workspace's published properties are returned. It is read on the
+ * server only (no NEXT_PUBLIC_ prefix) and must never reach the browser.
+ *
+ * Photo URLs come back signed and expiring; they are used as returned.
  *
  * The API is building-centric (a property with units); this site is listing-centric.
  * Every unit with an asking rent or sale price becomes one listing. A unit offered for
  * both rent and sale becomes two listings, because a renter and a buyer search differently.
  *
- * Not yet exercised against live data — enable with LISTINGS_SOURCE=vrodux and check the
- * mapping notes below against a real response before switching production over.
+ * Check the mapping notes below (area unit, residential/commercial) against production data.
  */
 
 // Mirrors PublicPropertyDto / PublicUnitDto in Softaxis.RealEstate.Application.
@@ -39,8 +43,8 @@ interface ApiProperty {
   emirate: string;
   developer: string | null;
   description: string | null;
-  imageIds: string[];
-  primaryImageId: string | null;
+  /** Signed relative paths, cover first. */
+  imageUrls: string[];
   units: ApiUnit[];
 }
 
@@ -53,12 +57,13 @@ const COMMERCIAL_TYPES = ["office", "retail", "shop", "warehouse", "commercial",
 
 function config() {
   const baseUrl = process.env.VRODUX_API_URL?.replace(/\/$/, "");
-  const tenant = process.env.VRODUX_TENANT_SLUG;
-  if (!baseUrl || !tenant) {
-    throw new Error("LISTINGS_SOURCE=vrodux needs VRODUX_API_URL and VRODUX_TENANT_SLUG.");
+  const apiKey = process.env.VRODUX_API_KEY;
+  if (!baseUrl || !apiKey) {
+    throw new Error("Listings need VRODUX_API_URL and VRODUX_API_KEY (see .env.example).");
   }
   return {
-    root: `${baseUrl}/api/real-estate/public/${encodeURIComponent(tenant)}`,
+    baseUrl,
+    apiKey,
     revalidate: Number(process.env.VRODUX_REVALIDATE_SECONDS ?? 300),
   };
 }
@@ -70,11 +75,8 @@ function slugify(s: string) {
     .replace(/^-|-$/g, "");
 }
 
-function toListings(p: ApiProperty, root: string): Listing[] {
-  const ordered = p.primaryImageId
-    ? [p.primaryImageId, ...p.imageIds.filter((i) => i !== p.primaryImageId)]
-    : p.imageIds;
-  const images = ordered.map((img) => `${root}/properties/${p.id}/images/${img}`);
+function toListings(p: ApiProperty, baseUrl: string): Listing[] {
+  const images = p.imageUrls.map((path) => `${baseUrl}${path}`);
 
   return p.units.flatMap((u) => {
     const offers: Array<{ purpose: "rent" | "sale"; price: number }> = [];
@@ -90,7 +92,12 @@ function toListings(p: ApiProperty, root: string): Listing[] {
       // Unit id suffix keeps the slug unique and stable even if the building is renamed.
       slug: `${slugify(`${p.name} ${u.unitNumber} ${o.purpose}`)}-${u.id.slice(0, 8)}`,
       reference: p.reference ? `${p.reference}-${u.unitNumber}` : u.unitNumber,
-      title: `${p.name} – ${u.unitType} for ${o.purpose === "rent" ? "Rent" : "Sale"}`,
+      // A single-unit property is usually already named as a listing ("… Studio for Rent");
+      // only multi-unit buildings need the unit spelled out.
+      title:
+        p.units.length === 1
+          ? p.name
+          : `${p.name} – ${u.unitType} ${u.unitNumber} for ${o.purpose === "rent" ? "Rent" : "Sale"}`,
       purpose: o.purpose,
       category: isCommercial ? "commercial" : "residential",
       propertyType: u.unitType,
@@ -115,19 +122,21 @@ function toListings(p: ApiProperty, root: string): Listing[] {
 }
 
 async function fetchAll(): Promise<Listing[]> {
-  const { root, revalidate } = config();
+  const { baseUrl, apiKey, revalidate } = config();
   const all: ApiProperty[] = [];
   for (let page = 1; page <= 20; page++) {
-    const res = await fetch(`${root}/properties?page=${page}&pageSize=100`, {
+    // pageSize is capped at 60 by the API.
+    const res = await fetch(`${baseUrl}/api/real-estate/website/properties?page=${page}&pageSize=60`, {
+      headers: { "X-Api-Key": apiKey },
       next: { revalidate },
     });
     if (!res.ok) throw new Error(`Vrodux listings request failed: HTTP ${res.status}`);
     const body = (await res.json()) as Paged<ApiProperty> | ApiProperty[];
     const items = Array.isArray(body) ? body : body.items;
     all.push(...items);
-    if (Array.isArray(body) || items.length < 100) break;
+    if (Array.isArray(body) || items.length < 60) break;
   }
-  return all.flatMap((p) => toListings(p, root));
+  return all.flatMap((p) => toListings(p, baseUrl));
 }
 
 export const vroduxSource: ListingsSource = {

@@ -1,8 +1,8 @@
 /**
  * The listing shape every page renders.
  *
- * Deliberately independent of where listings come from. Today they are read from
- * src/data/properties.json; later from the Vrodux Real Estate public API. Each source
+ * Deliberately independent of where listings come from — currently the Vrodux Real Estate
+ * website API (vrodux-source.ts). Each source
  * maps its own data into this type, so pages and components never change when the
  * source does.
  */

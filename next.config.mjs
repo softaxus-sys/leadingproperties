@@ -10,7 +10,7 @@ if (apiUrl) {
     protocol: u.protocol.replace(":", ""),
     hostname: u.hostname,
     port: u.port,
-    pathname: "/api/real-estate/public/**",
+    pathname: "/api/real-estate/website/images/**",
   });
 }
 
