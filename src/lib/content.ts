@@ -9,7 +9,7 @@ export type Project = (typeof projects)[number];
 export const getProjects = (): Project[] => projects;
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug) ?? null;
 
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://leadingproperties.ae").replace(
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://leadingproperties.ae").replace(
   /\/$/,
   "",
 );
