@@ -5,15 +5,10 @@ import { Mail, MessageCircle } from "lucide-react";
 import { site } from "@/lib/content";
 import { whatsappLink } from "@/lib/format";
 
-/**
- * There is no backend yet, so an enquiry is handed to WhatsApp or the visitor's email
- * client with the details pre-filled. When enquiries should land in Vrodux CRM as leads,
- * replace `send` with a POST to a server route that relays to the CRM inbound URL
- * (keep that URL server-side — its key is the only thing protecting the endpoint).
- */
 export function EnquiryForm({ subject }: { subject?: string }) {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -29,12 +24,33 @@ export function EnquiryForm({ subject }: { subject?: string }) {
       .filter(Boolean)
       .join("\n");
 
-  const send = (channel: "whatsapp" | "email") => {
+  const submitLead = async () => {
+    try {
+      await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+          interested_in: subject ?? "",
+        }),
+      });
+    } catch {
+      // Non-blocking: the enquiry still reaches us via WhatsApp/email below.
+    }
+  };
+
+  const send = async (channel: "whatsapp" | "email") => {
     if (!form.name.trim() || (!form.phone.trim() && !form.email.trim())) {
       setError("Please enter your name and a phone number or email.");
       return;
     }
     setError(null);
+    setSubmitting(true);
+    await submitLead();
+    setSubmitting(false);
     const url =
       channel === "whatsapp"
         ? whatsappLink(site.contact.whatsapp, body())
@@ -68,10 +84,10 @@ export function EnquiryForm({ subject }: { subject?: string }) {
         </p>
       )}
       <div className="grid gap-3 sm:grid-cols-2">
-        <button type="submit" className="btn bg-[#25D366] text-white hover:bg-[#1eb957]">
+        <button type="submit" disabled={submitting} className="btn bg-[#25D366] text-white hover:bg-[#1eb957] disabled:opacity-60">
           <MessageCircle className="h-4 w-4" aria-hidden /> Send on WhatsApp
         </button>
-        <button type="button" className="btn-dark" onClick={() => send("email")}>
+        <button type="button" disabled={submitting} className="btn-dark disabled:opacity-60" onClick={() => send("email")}>
           <Mail className="h-4 w-4" aria-hidden /> Send by Email
         </button>
       </div>
