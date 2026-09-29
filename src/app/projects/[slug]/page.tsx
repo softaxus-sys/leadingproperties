@@ -71,7 +71,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
               <h2 className="text-2xl font-bold">Highlights</h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {p.highlights.map((h) => (
-                  <div key={h.title} className="rounded-lg border border-zinc-200 p-5">
+                  <div key={h.title} className="border border-zinc-200 p-5">
                     <CheckCircle2 className="h-5 w-5 text-brand" aria-hidden />
                     <h3 className="mt-2 font-bold">{h.title}</h3>
                     <p className="mt-1 text-sm text-ink-soft">{h.text}</p>
@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
           {p.distances.length > 0 && (
             <section className="mt-12">
               <h2 className="text-2xl font-bold">Location</h2>
-              <ul className="mt-6 divide-y divide-zinc-200 rounded-lg border border-zinc-200">
+              <ul className="mt-6 divide-y divide-zinc-200 border border-zinc-200">
                 {p.distances.map((d) => (
                   <li key={d.place} className="flex items-center justify-between px-5 py-3">
                     <span>{d.place}</span>
@@ -106,7 +106,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
         </div>
 
         <aside className="lg:sticky lg:top-24 lg:self-start">
-          <div className="rounded-lg border border-zinc-200 p-5">
+          <div className="border border-t-4 border-zinc-200 border-t-brand p-5">
             <h2 className="text-lg font-bold">Register your interest</h2>
             <p className="mt-1 mb-4 text-sm text-ink-muted">Get the brochure, floor plans and payment plan.</p>
             <EnquiryForm subject={`${p.name} by ${p.developer}`} />

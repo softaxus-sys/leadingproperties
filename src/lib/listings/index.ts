@@ -11,7 +11,18 @@ function source(): ListingsSource {
   return vroduxSource;
 }
 
-export const getListings = () => source().getAll();
+/**
+ * Listing grids degrade to empty when the ERP is unreachable, so the rest of the page still
+ * renders. Detail pages use getListing, which still throws and lands on app/error.tsx.
+ */
+export async function getListings(): Promise<Listing[]> {
+  try {
+    return await source().getAll();
+  } catch (err) {
+    console.error("[listings] source unavailable:", err);
+    return [];
+  }
+}
 export const getListing = (slug: string) => source().getBySlug(slug);
 
 export async function getFeaturedListings(limit = 6) {

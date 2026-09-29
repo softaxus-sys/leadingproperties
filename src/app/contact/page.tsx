@@ -20,7 +20,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-ink py-14 text-white">
+      <section className="page-hero">
         <div className="container">
           <p className="eyebrow">Keep in touch</p>
           <h1 className="mt-2 text-4xl font-extrabold">Contact Us</h1>
@@ -36,7 +36,7 @@ export default function ContactPage() {
           <ul className="mt-6 space-y-5">
             {items.map(({ Icon, label, value, href, ltr }) => (
               <li key={label} className="flex gap-4">
-                <span className="rounded-full bg-brand-light p-3 text-brand">
+                <span className="bg-brand p-3 text-white">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div>
@@ -52,7 +52,7 @@ export default function ContactPage() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 aspect-[4/3] overflow-hidden rounded-lg border border-zinc-200">
+          <div className="mt-8 aspect-[4/3] overflow-hidden border border-zinc-200">
             <iframe
               title="Leading Properties office location"
               src={`https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&output=embed`}
@@ -63,7 +63,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="rounded-lg border border-zinc-200 p-6 lg:self-start">
+        <div className="border border-t-4 border-zinc-200 border-t-brand p-6 lg:self-start">
           <h2 className="text-2xl font-bold">Send us a message</h2>
           <p className="mb-5 mt-1 text-sm text-ink-muted">We usually reply within one business day.</p>
           <EnquiryForm />

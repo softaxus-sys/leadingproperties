@@ -21,10 +21,10 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-ink text-zinc-300">
+    <footer className="border-t-4 border-brand bg-ink text-zinc-300">
       <div className="container grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
-        <div className="lg:col-span-2">
-          <div className="inline-block rounded-md bg-white p-3">
+        <div>
+          <div className="inline-block bg-white p-3">
             <Image src="/images/brand/logo.png" alt={site.name} width={170} height={44} />
           </div>
           <p className="mt-5 max-w-md text-sm leading-relaxed">
@@ -38,7 +38,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="rounded-full border border-zinc-700 p-2.5 transition hover:border-brand hover:text-brand"
+                className="border border-zinc-700 p-2.5 transition hover:border-brand hover:text-brand"
               >
                 <Icon className="h-4 w-4" />
               </a>
@@ -60,6 +60,19 @@ export function Footer() {
               <li key={href}>
                 <Link href={href} className="hover:text-white">
                   {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-bold uppercase tracking-wider text-white">Popular Areas</h2>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {["Business Bay", "Downtown Dubai", "Dubai Marina", "Dubai Hills Estate", "Jumeirah Village Circle", "Palm Jumeirah"].map((area) => (
+              <li key={area}>
+                <Link href={`/properties?community=${encodeURIComponent(area)}`} className="hover:text-white">
+                  {area}
                 </Link>
               </li>
             ))}

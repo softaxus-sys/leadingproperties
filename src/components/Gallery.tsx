@@ -31,7 +31,7 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
       <button
         type="button"
         onClick={() => setLightbox(true)}
-        className="relative block aspect-[16/10] w-full overflow-hidden rounded-lg bg-zinc-100"
+        className="relative block aspect-[16/10] w-full overflow-hidden bg-zinc-100"
         aria-label="Open photo viewer"
       >
         <Image src={images[active]} alt={alt} fill priority sizes="(min-width: 1024px) 66vw, 100vw" className="object-cover" />
@@ -46,7 +46,7 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
               onClick={() => setActive(i)}
               aria-label={`Show photo ${i + 1}`}
               aria-current={i === active}
-              className={`relative aspect-square overflow-hidden rounded-md border-2 ${
+              className={`relative aspect-square overflow-hidden border-2 ${
                 i === active ? "border-brand" : "border-transparent"
               }`}
             >

@@ -13,7 +13,7 @@ export default function ProjectsPage() {
   const projects = getProjects();
   return (
     <>
-      <section className="bg-ink py-14 text-white">
+      <section className="page-hero">
         <div className="container">
           <p className="eyebrow">New projects</p>
           <h1 className="mt-2 text-4xl font-extrabold">Latest Projects</h1>
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
 
       <section className="container grid gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
-          <Link key={p.slug} href={`/projects/${p.slug}`} className="group overflow-hidden rounded-lg border border-zinc-200 transition hover:shadow-xl">
+          <Link key={p.slug} href={`/projects/${p.slug}`} className="group overflow-hidden border border-zinc-200 transition hover:border-ink hover:shadow-[6px_6px_0_0_#E1251B]">
             <div className="relative aspect-[16/10] overflow-hidden bg-zinc-100">
               <Image src={p.images[0]} alt={p.name} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" />
             </div>

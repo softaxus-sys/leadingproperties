@@ -3,7 +3,7 @@ import { Search } from "lucide-react";
 /** Plain GET form — works without JavaScript and produces a shareable results URL. */
 export function SearchBar({ communities, types }: { communities: string[]; types: string[] }) {
   return (
-    <form action="/properties" method="get" className="grid gap-3 rounded-lg bg-white p-4 shadow-xl md:grid-cols-5">
+    <form action="/properties" method="get" className="grid gap-3 border-t-4 border-brand bg-white p-4 shadow-2xl md:grid-cols-5">
       <label className="sr-only" htmlFor="s-purpose">Looking for</label>
       <select id="s-purpose" name="purpose" className="field" defaultValue="">
         <option value="">Rent or Buy</option>

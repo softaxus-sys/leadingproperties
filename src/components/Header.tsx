@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { nav, site } from "@/lib/content";
 
 export function Header() {
@@ -18,7 +18,22 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href.split("?")[0]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-white shadow-[0_1px_0_0_#e4e4e7]">
+      <div className="hidden bg-ink text-xs text-zinc-400 md:block">
+        <div className="container flex h-10 items-center justify-between">
+          <span className="flex items-center gap-2">
+            <MapPin className="h-3.5 w-3.5 text-brand" aria-hidden /> Business Bay, Dubai
+          </span>
+          <div className="flex items-center gap-6">
+            <a href={`mailto:${site.contact.email}`} className="flex items-center gap-2 hover:text-white">
+              <Mail className="h-3.5 w-3.5 text-brand" aria-hidden /> {site.contact.email}
+            </a>
+            <a href={`tel:${site.contact.phone}`} className="flex items-center gap-2 hover:text-white" dir="ltr">
+              <Phone className="h-3.5 w-3.5 text-brand" aria-hidden /> {site.contact.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </div>
       <div className="container flex h-20 items-center justify-between gap-6">
         <Link href="/" aria-label={`${site.name} home`} className="shrink-0">
           <Image src="/images/brand/logo.png" alt={site.name} width={180} height={46} priority />
@@ -30,16 +45,16 @@ export function Header() {
               <div key={item.href} className="group relative">
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold hover:text-brand ${
-                    isActive(item.href) ? "text-brand" : ""
+                  className={`flex items-center gap-1 px-3 py-2 text-sm font-semibold hover:text-brand ${
+                    isActive(item.href) ? "text-ink shadow-[inset_0_-3px_0_0_#E1251B]" : "text-ink-soft"
                   }`}
                 >
                   {item.label}
                   <ChevronDown className="h-4 w-4" aria-hidden />
                 </Link>
-                <div className="invisible absolute left-0 top-full w-48 rounded-md border border-zinc-200 bg-white py-2 opacity-0 shadow-lg transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-0 top-full w-48 border border-zinc-200 bg-white py-2 opacity-0 shadow-lg transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                   {item.children.map((c) => (
-                    <Link key={c.href} href={c.href} className="block px-4 py-2 text-sm hover:bg-zinc-50 hover:text-brand">
+                    <Link key={c.href} href={c.href} className="block px-4 py-2 text-sm hover:bg-zinc-100 hover:text-brand">
                       {c.label}
                     </Link>
                   ))}
@@ -49,8 +64,8 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-md px-3 py-2 text-sm font-semibold hover:text-brand ${
-                  isActive(item.href) ? "text-brand" : ""
+                className={`px-3 py-2 text-sm font-semibold hover:text-brand ${
+                  isActive(item.href) ? "text-ink shadow-[inset_0_-3px_0_0_#E1251B]" : "text-ink-soft"
                 }`}
               >
                 {item.label}
@@ -66,7 +81,7 @@ export function Header() {
 
         <button
           type="button"
-          className="rounded-md p-2 lg:hidden"
+          className="p-2 lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-controls="mobile-nav"

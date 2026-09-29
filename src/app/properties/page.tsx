@@ -61,7 +61,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
 
   return (
     <>
-      <section className="bg-ink py-14 text-white">
+      <section className="page-hero">
         <div className="container">
           <p className="eyebrow">Listings</p>
           <h1 className="mt-2 text-4xl font-extrabold">{heading(f)}</h1>
@@ -74,7 +74,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
       <section className="container grid gap-8 py-10 lg:grid-cols-[280px_1fr]">
         {/* Filters are a GET form: no JavaScript needed, and results are a shareable URL. */}
         <aside>
-          <form action="/properties" method="get" className="space-y-4 rounded-lg border border-zinc-200 p-5 lg:sticky lg:top-24">
+          <form action="/properties" method="get" className="space-y-4 border border-zinc-200 p-5 lg:sticky lg:top-24">
             <p className="flex items-center gap-2 font-bold">
               <SlidersHorizontal className="h-4 w-4" aria-hidden /> Filter
             </p>
@@ -148,7 +148,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
 
         <div>
           {results.length === 0 ? (
-            <div className="rounded-lg border border-dashed border-zinc-300 p-12 text-center">
+            <div className="border border-dashed border-zinc-300 p-12 text-center">
               <h2 className="text-xl font-bold">No properties match these filters</h2>
               <p className="mt-2 text-ink-muted">Try widening your search, or tell us what you need and we&apos;ll find it.</p>
               <div className="mt-6 flex justify-center gap-3">

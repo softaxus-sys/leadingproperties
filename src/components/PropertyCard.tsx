@@ -7,7 +7,7 @@ import { formatArea, formatBeds, formatPrice } from "@/lib/format";
 export function PropertyCard({ listing: l }: { listing: Listing }) {
   const cover = l.images[0];
   return (
-    <article className="group flex flex-col overflow-hidden rounded-lg border border-zinc-200 bg-white transition hover:shadow-xl">
+    <article className="group flex flex-col overflow-hidden card transition hover:border-ink hover:shadow-[6px_6px_0_0_#E1251B]">
       <Link href={`/properties/${l.slug}`} className="relative block aspect-[4/3] overflow-hidden bg-zinc-100">
         {cover ? (
           <Image
@@ -22,10 +22,10 @@ export function PropertyCard({ listing: l }: { listing: Listing }) {
             <Building2 className="h-10 w-10" aria-hidden />
           </div>
         )}
-        <span className="absolute left-3 top-3 rounded bg-brand px-2.5 py-1 text-xs font-bold uppercase text-white">
+        <span className="absolute left-3 top-3 bg-brand px-3 py-1 text-xs font-bold uppercase text-white">
           For {l.purpose}
         </span>
-        <span className="absolute right-3 top-3 rounded bg-white/90 px-2.5 py-1 text-xs font-semibold capitalize">
+        <span className="absolute right-3 top-3 bg-ink px-3 text-white py-1 text-xs font-semibold capitalize">
           {l.category}
         </span>
       </Link>

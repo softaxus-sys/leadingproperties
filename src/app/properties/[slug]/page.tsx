@@ -55,8 +55,8 @@ export default async function PropertyPage({ params }: { params: Params }) {
       <div className="mt-4 flex flex-wrap items-start justify-between gap-4">
         <div>
           <div className="flex gap-2">
-            <span className="rounded bg-brand px-2.5 py-1 text-xs font-bold uppercase text-white">For {l.purpose}</span>
-            <span className="rounded bg-zinc-100 px-2.5 py-1 text-xs font-semibold capitalize">{l.category}</span>
+            <span className="bg-brand px-2.5 py-1 text-xs font-bold uppercase text-white">For {l.purpose}</span>
+            <span className="bg-ink px-2.5 text-white py-1 text-xs font-semibold capitalize">{l.category}</span>
           </div>
           <h1 className="mt-3 text-3xl font-extrabold md:text-4xl">{l.title}</h1>
           <p className="mt-2 flex items-center gap-1.5 text-ink-muted">
@@ -71,7 +71,7 @@ export default async function PropertyPage({ params }: { params: Params }) {
         <div>
           <Gallery images={l.images} alt={l.title} />
 
-          <dl className="mt-8 grid grid-cols-2 gap-4 rounded-lg border border-zinc-200 p-5 sm:grid-cols-3">
+          <dl className="mt-8 grid grid-cols-2 gap-4 border border-zinc-200 p-5 sm:grid-cols-3">
             {facts.map(({ Icon, label, value }) => (
               <div key={label} className="flex items-start gap-3">
                 <Icon className="mt-0.5 h-5 w-5 text-brand" aria-hidden />
@@ -101,7 +101,7 @@ export default async function PropertyPage({ params }: { params: Params }) {
         </div>
 
         <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
-          <div className="rounded-lg border border-zinc-200 p-5">
+          <div className="border border-t-4 border-zinc-200 border-t-brand p-5">
             <h2 className="text-lg font-bold">Interested in this property?</h2>
             <p className="mt-1 text-sm text-ink-muted">Send us your details and an advisor will get back to you.</p>
             <div className="mt-4 grid grid-cols-2 gap-2">
