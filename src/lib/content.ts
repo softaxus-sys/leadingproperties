@@ -17,16 +17,24 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://leadingprop
 export const nav = [
   { label: "Home", href: "/" },
   {
-    label: "Properties",
-    href: "/properties",
+    label: "Commercial",
+    href: "/properties?category=commercial",
     children: [
-      { label: "For Rent", href: "/properties?purpose=rent" },
-      { label: "For Sale", href: "/properties?purpose=sale" },
-      { label: "Residential", href: "/properties?category=residential" },
-      { label: "Commercial", href: "/properties?category=commercial" },
+      { label: "Rent", href: "/properties?category=commercial&purpose=rent" },
+      { label: "Sale", href: "/properties?category=commercial&purpose=sale" },
     ],
   },
-  { label: "New Projects", href: "/projects" },
-  { label: "About Us", href: "/about" },
+  { label: "Residentials", href: "/properties?category=residential" },
+  {
+    label: "New Projects",
+    href: "/projects",
+    children: [
+      { label: "All Projects", href: "/projects" },
+      { label: "Tilal Binghatti", href: "/projects/tilal-binghatti" },
+      { label: "Damac", href: "/projects/damac" },
+      { label: "Binghatti", href: "/projects/binghatti" },
+    ],
+  },
+  { label: "About us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
 ];

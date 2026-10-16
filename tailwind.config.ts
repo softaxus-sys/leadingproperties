@@ -12,14 +12,9 @@ const config: Config = {
           dark: "#B81C14",
           light: "#FDECEB",
         },
-        // Warm off-white page ground: lets the black wordmark read crisply without stark white.
-        paper: {
-          DEFAULT: "#F5F3EF",
-          dark: "#E9E5DE",
-        },
         ink: {
-          DEFAULT: "#141414",
-          soft: "#2A2A2A",
+          DEFAULT: "#111111",
+          soft: "#3F3F46",
           muted: "#71717A",
         },
       },

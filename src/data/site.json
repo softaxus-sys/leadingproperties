@@ -1,15 +1,15 @@
 {
   "name": "Leading Properties",
   "legalName": "Leading Properties Dubai",
-  "tagline": "Lead the Way Home",
-  "description": "Leading Properties is a Dubai real estate consultancy helping clients buy, sell, rent and invest in residential and commercial property across the UAE.",
+  "tagline": "Trust the Expert",
+  "description": "We have the largest inventory of properties in Dubai. Leading properties have grown-up to be one of the most trusted real estate agencies in Dubai.",
   "yearsInBusiness": 9,
   "contact": {
     "phone": "+97142445777",
-    "phoneDisplay": "+971 4 244 5777",
+    "phoneDisplay": "+971 4 2445777",
     "whatsapp": "971586015987",
     "email": "info@leadingproperties.ae",
-    "address": "The Binary by OMNIYAT, Office 712, 7th Floor, Business Bay, Dubai, United Arab Emirates",
+    "address": "The Binary by OMNIYAT – 712, 7th Floor – Business Bay – Dubai – United Arab Emirates",
     "mapQuery": "The Binary by OMNIYAT Business Bay Dubai"
   },
   "social": {
@@ -31,26 +31,58 @@
     "items": [
       {
         "author": "Jamal Ahmad",
-        "text": "I had an excellent experience with Leading Properties Real Estate. The entire transaction was handled with utmost professionalism. A special thanks to Mumtaz, whose patience, deep market knowledge, and support with documentation were truly exceptional."
-      },
-      {
-        "author": "Kalsoom Durrani",
-        "text": "I had an outstanding experience with LeadingProperties.ae. Their team is highly professional, knowledgeable, and genuinely committed to providing top-tier real estate services in Dubai. From the very first inquiry to the final closing, the process was smooth, transparent, and efficient."
+        "text": "I had an excellent experience with Leading Properties Real Estate. The entire transaction was handled with utmost professionalism. A special thanks to Mumtaz, whose patience, deep market knowledge, and support with documentation were truly exceptional. His guidance made the process smooth and stress-free. Highly satisfied with the service—definitely recommend! — Jamal Ahmad"
       },
       {
         "author": "Mahmood Khan",
-        "text": "The quality of their work is amazing. Highly recommended."
+        "text": "The quality of their work is amazing. Highly recommended"
+      },
+      {
+        "author": "Kalsoom Durrani",
+        "text": "I had an outstanding experience with LeadingProperties.ae. Their team is highly professional, knowledgeable, and genuinely committed to providing top-tier real estate services in Dubai. From the very first inquiry to the final closing, the process was smooth, transparent, and efficient. They offer a diverse range of premium properties, and their personalized guidance made all the difference in helping me make the right investment decision. I truly appreciate their attention to detail and dedication to client satisfaction. Highly recommended for anyone looking to buy, sell, or invest in Dubai real estate."
       }
     ]
   },
   "developers": [
-    { "name": "Emaar", "logo": "/images/developers/emaar.png" },
-    { "name": "Damac", "logo": "/images/developers/damac.png" },
-    { "name": "Meraas", "logo": "/images/developers/meraas.png" },
-    { "name": "Sobha Realty", "logo": "/images/developers/sobha.png" },
-    { "name": "Reportage", "logo": "/images/developers/reportage.webp" },
-    { "name": "Azizi", "logo": "/images/developers/azizi.webp" },
-    { "name": "BT Properties", "logo": "/images/developers/bt-properties.png" },
-    { "name": "Property Finder", "logo": "/images/developers/property-finder.png" }
+    {
+      "name": "Property Finder",
+      "logo": "/images/developers/property-finder.png"
+    },
+    {
+      "name": "Reportage",
+      "logo": "/images/developers/reportage.webp"
+    },
+    {
+      "name": "Azizi",
+      "logo": "/images/developers/azizi.webp"
+    },
+    {
+      "name": "BT Properties",
+      "logo": "/images/developers/bt-properties.png"
+    },
+    {
+      "name": "Damac",
+      "logo": "/images/developers/damac.png"
+    },
+    {
+      "name": "Meraas",
+      "logo": "/images/developers/meraas.png"
+    },
+    {
+      "name": "Emaar",
+      "logo": "/images/developers/emaar.png"
+    },
+    {
+      "name": "Dubai Properties",
+      "logo": "/images/developers/dubai-properties.jpg"
+    },
+    {
+      "name": "Sobha Realty",
+      "logo": "/images/developers/sobha.png"
+    },
+    {
+      "name": "Sobha",
+      "logo": "/images/developers/sobha-square.webp"
+    }
   ]
 }

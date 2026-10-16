@@ -1,18 +1,187 @@
 [
-  { "name": "Saira Bano", "role": "Administrative Officer", "image": "/images/team/saira.webp" },
-  { "name": "Natasha Murray", "role": "Operational Manager", "image": "/images/team/natasha.webp" },
-  { "name": "Mohsin Khalid", "role": "Public Relation Executive", "image": "/images/team/mohsin.png" },
-  { "name": "Ejaz Ahmed", "role": "Property Advisor", "image": "/images/team/ejaz.jpeg" },
-  { "name": "Nida Laraib", "role": "Property Consultant", "image": "/images/team/nida.webp" },
-  { "name": "Muhammad Mumtaz", "role": "Property Consultant", "image": "/images/team/mumtaz.webp" },
-  { "name": "Hanzla Shafique", "role": "Property Consultant", "image": "/images/team/hanzla.webp" },
-  { "name": "Junaid", "role": "Property Consultant", "image": "/images/team/junaid.png" },
-  { "name": "Faiq Ibrahim", "role": "Property Consultant", "image": "/images/team/faiq.png" },
-  { "name": "Atta ur Rehman", "role": "Property Advisor", "image": "/images/team/atta.png" },
-  { "name": "Sushmita", "role": "Property Consultant", "image": "/images/team/sushmita.png" },
-  { "name": "Ahsan", "role": "Property Consultant", "image": "/images/team/ahsan.png" },
-  { "name": "Irfan", "role": "Property Consultant", "image": "/images/team/irfan.png" },
-  { "name": "Shakila", "role": "Property Consultant", "image": "/images/team/shakila.png" },
-  { "name": "Aqeela", "role": "Property Consultant", "image": "/images/team/aqeela.jpg" },
-  { "name": "Shanz", "role": "Property Consultant", "image": "/images/team/shanz.png" }
+  {
+    "name": "Ali Nawaz",
+    "role": "Sales Manager",
+    "image": "/images/team/ali-nawaz.webp"
+  },
+  {
+    "name": "Natasha Murray",
+    "role": "Sales Manager",
+    "image": "/images/team/natasha-murray.webp"
+  },
+  {
+    "name": "Atta Ur Rehman",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/atta-ur-rehman.webp"
+  },
+  {
+    "name": "Banaras Sultan",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/banaras-sultan.webp"
+  },
+  {
+    "name": "Faiq Ibraheem",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/faiq-ibraheem.webp"
+  },
+  {
+    "name": "Hanzla Shafique",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/hanzla-shafique.webp"
+  },
+  {
+    "name": "Maria Noreen",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/maria-noreen.webp"
+  },
+  {
+    "name": "Mohammed Arif",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/mohammed-arif.webp"
+  },
+  {
+    "name": "Mohammed Mumtaz",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/mohammed-mumtaz.webp"
+  },
+  {
+    "name": "Sushmita Rani",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/sushmita-rani.webp"
+  },
+  {
+    "name": "Zulfiqar Ahmed",
+    "role": "Senior Property Consultant",
+    "image": "/images/team/zulfiqar-ahmed.webp"
+  },
+  {
+    "name": "Adil Abbasi",
+    "role": "Property Consultant",
+    "image": "/images/team/adil-abbasi.webp"
+  },
+  {
+    "name": "Adnan Ali",
+    "role": "Property Consultant",
+    "image": "/images/team/adnan-ali.webp"
+  },
+  {
+    "name": "Amir Chaudhary",
+    "role": "Property Consultant",
+    "image": "/images/team/amir-chaudhary.webp"
+  },
+  {
+    "name": "Armaghal Zahid",
+    "role": "Property Consultant",
+    "image": "/images/team/armaghal-zahid.webp"
+  },
+  {
+    "name": "Asma Shafiq",
+    "role": "Property Consultant",
+    "image": "/images/team/asma-shafiq.webp"
+  },
+  {
+    "name": "Danish Abbasi",
+    "role": "Property Consultant",
+    "image": "/images/team/danish-abbasi.webp"
+  },
+  {
+    "name": "Ghazala Jamil",
+    "role": "Property Consultant",
+    "image": "/images/team/ghazala-jamil.webp"
+  },
+  {
+    "name": "Hamza Mailk",
+    "role": "Property Consultant",
+    "image": "/images/team/hamza-mailk.webp"
+  },
+  {
+    "name": "Imtiaz Ahmed",
+    "role": "Property Consultant",
+    "image": "/images/team/imtiaz-ahmed.webp"
+  },
+  {
+    "name": "Khumail Ahmed",
+    "role": "Property Consultant",
+    "image": "/images/team/khumail-ahmed.webp"
+  },
+  {
+    "name": "Mohammed Nasir",
+    "role": "Property Consultant",
+    "image": "/images/team/mohammed-nasir.webp"
+  },
+  {
+    "name": "Mohammed Rizwan",
+    "role": "Property Consultant",
+    "image": "/images/team/mohammed-rizwan.webp"
+  },
+  {
+    "name": "Mohammed Usama",
+    "role": "Property Consultant",
+    "image": "/images/team/mohammed-usama.webp"
+  },
+  {
+    "name": "Muzaffar Parker",
+    "role": "Property Consultant",
+    "image": "/images/team/muzaffar-parker.webp"
+  },
+  {
+    "name": "Nida Laraib",
+    "role": "Property Consultant",
+    "image": "/images/team/nida-laraib.webp"
+  },
+  {
+    "name": "Raja Mansoor",
+    "role": "Property Consultant",
+    "image": "/images/team/raja-mansoor.webp"
+  },
+  {
+    "name": "Saad Ishaq",
+    "role": "Property Consultant",
+    "image": "/images/team/saad-ishaq.webp"
+  },
+  {
+    "name": "Sadaqat Ali",
+    "role": "Property Consultant",
+    "image": "/images/team/sadaqat-ali.webp"
+  },
+  {
+    "name": "Sardar Zaryab",
+    "role": "Property Consultant",
+    "image": "/images/team/sardar-zaryab.webp"
+  },
+  {
+    "name": "Shanza Zaheer",
+    "role": "Property Consultant",
+    "image": "/images/team/shanza-zaheer.webp"
+  },
+  {
+    "name": "Syed Umair",
+    "role": "Property Consultant",
+    "image": "/images/team/syed-umair.webp"
+  },
+  {
+    "name": "Waqas Ali",
+    "role": "Property Consultant",
+    "image": "/images/team/waqas-ali.webp"
+  },
+  {
+    "name": "Wasim Khan",
+    "role": "Property Consultant",
+    "image": "/images/team/wasim-khan.webp"
+  },
+  {
+    "name": "Zakauddin Khan",
+    "role": "Property Consultant",
+    "image": "/images/team/zakauddin-khan.webp"
+  },
+  {
+    "name": "Shakeel Ahmed",
+    "role": "Finance & Accounts",
+    "image": "/images/team/shakeel-ahmed.webp"
+  },
+  {
+    "name": "Dawood Khan",
+    "role": "Office Assistant",
+    "image": "/images/team/dawood-khan.webp"
+  }
 ]

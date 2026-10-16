@@ -1,28 +1,15 @@
+import { jsonSource } from "./json-source";
 import { vroduxSource } from "./vrodux-source";
 import type { Listing, ListingFilters, ListingsSource } from "./types";
 
 export type * from "./types";
 
-/**
- * Listings come only from Vrodux ERP (Real Estate → Website). Pages only import from here, so
- * another source can be added later by implementing ListingsSource and switching it in.
- */
+/** The single switch between local JSON and the Vrodux API. Pages only import from here. */
 function source(): ListingsSource {
-  return vroduxSource;
+  return process.env.LISTINGS_SOURCE === "vrodux" ? vroduxSource : jsonSource;
 }
 
-/**
- * Listing grids degrade to empty when the ERP is unreachable, so the rest of the page still
- * renders. Detail pages use getListing, which still throws and lands on app/error.tsx.
- */
-export async function getListings(): Promise<Listing[]> {
-  try {
-    return await source().getAll();
-  } catch (err) {
-    console.error("[listings] source unavailable:", err);
-    return [];
-  }
-}
+export const getListings = () => source().getAll();
 export const getListing = (slug: string) => source().getBySlug(slug);
 
 export async function getFeaturedListings(limit = 6) {

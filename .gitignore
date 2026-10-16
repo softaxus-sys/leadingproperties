@@ -9,3 +9,6 @@ next-env.d.ts
 npm-debug.log*
 .DS_Store
 /.vs
+
+# Source photo bundles (processed copies live in public/images/team)
+*.zip
