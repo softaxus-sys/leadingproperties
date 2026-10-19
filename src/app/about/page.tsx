@@ -21,7 +21,7 @@ export default function AboutPage() {
               <p>
                 Welcome to Leading Properties, a multi-award-winning real estate company setting benchmarks across the
                 UAE. With over a decade of trusted service, we specialize in luxury and commercial properties, guided by
-                our motto. “{site.tagline}.” We blend innovation, expertise, and client-first service to simplify your
+                our motto. “{site.tagline}.” We blend innovation, deep market knowledge, and client-first service to simplify your
                 property journey. From finding your dream home to securing smart investments, Leading Properties is
                 where your vision meets results.
               </p>

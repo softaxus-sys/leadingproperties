@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SlidersHorizontal } from "lucide-react";
+import { LocationCombobox } from "@/components/LocationCombobox";
 import { PropertyCard } from "@/components/PropertyCard";
 import {
   filterListings,
@@ -104,12 +105,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
               </select>
             </Field>
             <Field label="Location" id="f-community">
-              <select id="f-community" name="community" defaultValue={f.community ?? ""} className="field">
-                <option value="">All locations</option>
-                {communities.map((c) => (
-                  <option key={c}>{c}</option>
-                ))}
-              </select>
+              <LocationCombobox id="f-community" options={communities} defaultValue={f.community ?? ""} />
             </Field>
             <Field label="Min. bedrooms" id="f-beds">
               <select id="f-beds" name="beds" defaultValue={f.beds?.toString() ?? ""} className="field">

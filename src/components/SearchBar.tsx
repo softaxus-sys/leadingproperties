@@ -1,4 +1,5 @@
 import { Search } from "lucide-react";
+import { LocationCombobox } from "@/components/LocationCombobox";
 
 /** Plain GET form — works without JavaScript and produces a shareable results URL. */
 export function SearchBar({ communities, types }: { communities: string[]; types: string[] }) {
@@ -24,12 +25,7 @@ export function SearchBar({ communities, types }: { communities: string[]; types
         ))}
       </select>
       <label className="sr-only" htmlFor="s-community">Location</label>
-      <select id="s-community" name="community" className="field" defaultValue="">
-        <option value="">All locations</option>
-        {communities.map((c) => (
-          <option key={c}>{c}</option>
-        ))}
-      </select>
+      <LocationCombobox id="s-community" options={communities} />
       <button type="submit" className="btn-primary">
         <Search className="h-4 w-4" aria-hidden /> Search
       </button>

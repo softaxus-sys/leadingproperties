@@ -6,7 +6,7 @@ import { IntroSlider } from "@/components/IntroSlider";
 import { PartnerCarousel } from "@/components/PartnerCarousel";
 import { SearchBar } from "@/components/SearchBar";
 import { SectionHeading } from "@/components/SectionHeading";
-import { TeamGrid } from "@/components/TeamGrid";
+import { TeamCarousel } from "@/components/TeamCarousel";
 import { getProjects, site } from "@/lib/content";
 import { filterOptions, getFeaturedListings, getListings } from "@/lib/listings";
 
@@ -37,7 +37,7 @@ export default async function HomePage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-zinc-200">
             Delivering tailored real estate solutions in Dubai for over {site.yearsInBusiness} years, with a strong track
-            record of client satisfaction, investment success, and luxury property expertise.
+            record of client satisfaction, investment success, and specialist knowledge of luxury property.
           </p>
           <div className="mt-10 max-w-5xl">
             <SearchBar types={types} communities={communities} />
@@ -134,9 +134,9 @@ export default async function HomePage() {
       {/* Team */}
       <section className="section">
         <div className="container">
-          <SectionHeading align="center" title="Meet our Sales Team" text="Experienced agents with local expertise to help sell your property." />
+          <SectionHeading align="center" title="Meet our Sales Team" text="Experienced agents with local market knowledge to help sell your property." />
           <div className="mt-12">
-            <TeamGrid salesOnly />
+            <TeamCarousel salesOnly />
           </div>
         </div>
       </section>
@@ -183,7 +183,7 @@ export default async function HomePage() {
           <div>
             <h2 className="text-3xl font-extrabold">Fast And Reliable Service For Your Project Or A Quick Fix, We Do It All!</h2>
             <p className="mt-2 text-zinc-300">
-              whether you&apos;re seeking your dream home, a quick investment opportunity, or expert project support, we
+              whether you&apos;re seeking your dream home, a quick investment opportunity, or professional project support, we
               handle it all with precision and care.
             </p>
           </div>
