@@ -36,7 +36,7 @@ export default function AboutPage() {
       <section className="section bg-zinc-50">
         <div className="container grid items-center gap-10 md:grid-cols-[280px_1fr]">
           <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg">
-            <Image src={site.ceo.image} alt={site.ceo.name} fill sizes="280px" className="object-cover" />
+            <Image src={site.ceo.image} alt={site.ceo.name} fill sizes="280px" className="object-cover object-top" />
           </div>
           <div>
             <h2 className="text-3xl font-extrabold">CEO’s Message</h2>
