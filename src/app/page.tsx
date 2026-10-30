@@ -34,10 +34,10 @@ export default async function HomePage() {
         <div className="container py-24 md:py-36">
           <p className="mb-4 text-sm font-bold uppercase tracking-widest text-brand">{site.tagline}</p>
           <h1 className="max-w-3xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
-            Leading Properties-Your Trusted Real Estate Consultant in Dubai
+            Trusted Real Estate Expertise Since 2020
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-zinc-200">
-            Delivering tailored real estate solutions in Dubai for over {site.yearsInBusiness} years, with a strong track
+            Delivering tailored real estate solutions in Dubai since 2020, with a strong track
             record of client satisfaction, investment success, and specialist knowledge of luxury property.
           </p>
           <div className="mt-10 max-w-5xl">
