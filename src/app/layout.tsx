@@ -17,7 +17,7 @@ const display = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.legalName} | Trusted Real Estate Consultant`,
+    default: `${site.legalName} | ${site.tagline}`,
     template: `%s | ${site.name}`,
   },
   description: site.description,

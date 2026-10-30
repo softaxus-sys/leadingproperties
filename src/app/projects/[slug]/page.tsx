@@ -18,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const p = getProject((await params).slug);
-  return p ? { title: `${p.name} by ${p.developer}`, description: p.summary } : {};
+  return p ? { title: (p.developer === "Off-Plan" ? p.name : `${p.name} by ${p.developer}`), description: p.summary } : {};
 }
 
 export default async function ProjectPage({ params }: { params: Params }) {
@@ -109,7 +109,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
           <div className="rounded-lg border border-zinc-200 p-5">
             <h2 className="text-lg font-bold">Register your interest</h2>
             <p className="mt-1 mb-4 text-sm text-ink-muted">Get the brochure, floor plans and payment plan.</p>
-            <EnquiryForm subject={`${p.name} by ${p.developer}`} />
+            <EnquiryForm subject={(p.developer === "Off-Plan" ? p.name : `${p.name} by ${p.developer}`)} />
           </div>
         </aside>
       </div>

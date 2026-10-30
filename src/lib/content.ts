@@ -32,7 +32,6 @@ export const nav = [
       { label: "All Projects", href: "/projects" },
       { label: "Tilal Binghatti", href: "/projects/tilal-binghatti" },
       { label: "Damac", href: "/projects/damac" },
-      { label: "Binghatti", href: "/projects/binghatti" },
     ],
   },
   { label: "About us", href: "/about" },

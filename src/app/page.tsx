@@ -32,6 +32,7 @@ export default async function HomePage() {
       <section className="relative isolate overflow-hidden bg-ink">
         <Image src="/images/site/hero.webp" alt="" fill priority sizes="100vw" className="-z-10 object-cover opacity-45" />
         <div className="container py-24 md:py-36">
+          <p className="mb-4 text-sm font-bold uppercase tracking-widest text-brand">{site.tagline}</p>
           <h1 className="max-w-3xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
             Leading Properties-Your Trusted Real Estate Consultant in Dubai
           </h1>

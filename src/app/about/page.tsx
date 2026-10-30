@@ -21,7 +21,7 @@ export default function AboutPage() {
               <p>
                 Welcome to Leading Properties, a multi-award-winning real estate company setting benchmarks across the
                 UAE. With over a decade of trusted service, we specialize in luxury and commercial properties, guided by
-                our motto. “{site.tagline}.” We blend innovation, deep market knowledge, and client-first service to simplify your
+                our slogan, “{site.tagline}.” We blend innovation, deep market knowledge, and client-first service to simplify your
                 property journey. From finding your dream home to securing smart investments, Leading Properties is
                 where your vision meets results.
               </p>
@@ -41,7 +41,11 @@ export default function AboutPage() {
           <div>
             <h2 className="text-3xl font-extrabold">CEO’s Message</h2>
             <Quote className="mt-4 h-8 w-8 text-brand" aria-hidden />
-            <blockquote className="mt-3 text-xl leading-relaxed">{site.ceo.message}</blockquote>
+            <blockquote className="mt-3 space-y-4 text-lg leading-relaxed">
+              {site.ceo.message.split(/\n{2,}/).map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </blockquote>
             <p className="mt-6 font-bold">{site.ceo.name}</p>
             <p className="text-sm text-ink-muted">
               {site.ceo.title}, {site.name}

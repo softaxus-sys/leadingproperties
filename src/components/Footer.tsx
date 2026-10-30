@@ -27,7 +27,8 @@ export function Footer() {
           <div className="inline-block rounded-md bg-white p-3">
             <Image src="/images/brand/logo.png" alt={site.name} width={170} height={44} />
           </div>
-          <p className="mt-5 max-w-md text-sm leading-relaxed">
+          <p className="mt-5 text-sm font-bold uppercase tracking-widest text-brand">{site.tagline}</p>
+          <p className="mt-3 max-w-md text-sm leading-relaxed">
             {site.description}
           </p>
           <div className="mt-6 flex gap-3">

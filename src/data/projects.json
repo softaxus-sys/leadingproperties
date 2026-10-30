@@ -13,22 +13,62 @@
       "Every residence shares the same brief: 4M floor-to-ceiling heights, 8M double-height living areas, and a material palette of marble, wood veneer and champagne hairline metal that carries from the facade into each home."
     ],
     "highlights": [
-      { "title": "Delivered Landscaped Gardens", "text": "Villas hand over grass-landscaped, not sand — no post-handover finishing burden." },
-      { "title": "Prime Location", "text": "10 minutes from Meydan Racecourse and Dubai's Downtown-bound road network." },
-      { "title": "50+ Amenities", "text": "Pearl Beach, Alwaha swimmable lakes, a clubhouse and a 1.6km cycling & jogging track." },
-      { "title": "20,000+ Trees", "text": "Central parks, green corridors and shaded walkways across the masterplan." },
-      { "title": "The Sunken Pearl", "text": "A 12,000 sqm artificial shore with a wave-generation system." },
-      { "title": "Smart Home & Security", "text": "Integrated smart home technology, EV charging and gated, secure clusters." }
+      {
+        "title": "Delivered Landscaped Gardens",
+        "text": "Villas hand over grass-landscaped, not sand — no post-handover finishing burden."
+      },
+      {
+        "title": "Prime Location",
+        "text": "10 minutes from Meydan Racecourse and Dubai's Downtown-bound road network."
+      },
+      {
+        "title": "50+ Amenities",
+        "text": "Pearl Beach, Alwaha swimmable lakes, a clubhouse and a 1.6km cycling & jogging track."
+      },
+      {
+        "title": "20,000+ Trees",
+        "text": "Central parks, green corridors and shaded walkways across the masterplan."
+      },
+      {
+        "title": "The Sunken Pearl",
+        "text": "A 12,000 sqm artificial shore with a wave-generation system."
+      },
+      {
+        "title": "Smart Home & Security",
+        "text": "Integrated smart home technology, EV charging and gated, secure clusters."
+      }
     ],
     "distances": [
-      { "place": "Meydan Racecourse", "time": "10 min" },
-      { "place": "Dubai Creek Harbour", "time": "15 min" },
-      { "place": "Burj Khalifa & Dubai Mall", "time": "17 min" },
-      { "place": "DXB International Airport", "time": "18 min" },
-      { "place": "Museum of the Future", "time": "20 min" },
-      { "place": "Palm Jumeirah", "time": "35 min" }
+      {
+        "place": "Meydan Racecourse",
+        "time": "10 min"
+      },
+      {
+        "place": "Dubai Creek Harbour",
+        "time": "15 min"
+      },
+      {
+        "place": "Burj Khalifa & Dubai Mall",
+        "time": "17 min"
+      },
+      {
+        "place": "DXB International Airport",
+        "time": "18 min"
+      },
+      {
+        "place": "Museum of the Future",
+        "time": "20 min"
+      },
+      {
+        "place": "Palm Jumeirah",
+        "time": "35 min"
+      }
     ],
-    "images": ["/images/projects/binghatti-1.webp", "/images/projects/binghatti-2.webp", "/images/projects/binghatti-3.webp"],
+    "images": [
+      "/images/projects/binghatti-1.webp",
+      "/images/projects/binghatti-2.webp",
+      "/images/projects/binghatti-3.webp"
+    ],
     "featured": true
   },
   {
@@ -42,22 +82,13 @@
     "description": [],
     "highlights": [],
     "distances": [],
-    "images": ["/images/projects/flare-1.jpg", "/images/projects/flare-2.webp", "/images/projects/flare-3.jpg", "/images/projects/flare-4.jpg"],
+    "images": [
+      "/images/projects/flare-1.jpg",
+      "/images/projects/flare-2.webp",
+      "/images/projects/flare-3.jpg",
+      "/images/projects/flare-4.jpg"
+    ],
     "featured": true
-  },
-  {
-    "slug": "binghatti",
-    "name": "Binghatti",
-    "developer": "Binghatti",
-    "headline": "Binghatti Developments",
-    "location": "Dubai",
-    "unitTypes": null,
-    "summary": "Explore current Binghatti developments with Leading Properties. Contact our advisors for availability and payment plans.",
-    "description": [],
-    "highlights": [],
-    "distances": [],
-    "images": ["/images/projects/binghatti-4.jpg", "/images/projects/binghatti-2.webp", "/images/projects/binghatti-3.webp"],
-    "featured": false
   },
   {
     "slug": "damac",
@@ -70,7 +101,12 @@
     "description": [],
     "highlights": [],
     "distances": [],
-    "images": ["/images/projects/damac-1.jpg", "/images/projects/damac-2.jpg", "/images/projects/damac-3.webp", "/images/projects/damac-4.jpg"],
+    "images": [
+      "/images/projects/damac-1.jpg",
+      "/images/projects/damac-2.jpg",
+      "/images/projects/damac-3.webp",
+      "/images/projects/damac-4.jpg"
+    ],
     "featured": true
   },
   {
@@ -84,7 +120,12 @@
     "description": [],
     "highlights": [],
     "distances": [],
-    "images": ["/images/projects/meraas-1.webp", "/images/projects/meraas-2.webp", "/images/projects/meraas-3.webp", "/images/projects/meraas-4.webp"],
+    "images": [
+      "/images/projects/meraas-1.webp",
+      "/images/projects/meraas-2.webp",
+      "/images/projects/meraas-3.webp",
+      "/images/projects/meraas-4.webp"
+    ],
     "featured": true
   },
   {
@@ -98,7 +139,12 @@
     "description": [],
     "highlights": [],
     "distances": [],
-    "images": ["/images/projects/sobha-1.webp", "/images/projects/sobha-2.png", "/images/projects/sobha-3.jpg", "/images/projects/sobha-4.webp"],
+    "images": [
+      "/images/projects/sobha-1.webp",
+      "/images/projects/sobha-2.png",
+      "/images/projects/sobha-3.jpg",
+      "/images/projects/sobha-4.webp"
+    ],
     "featured": false
   },
   {
@@ -112,7 +158,172 @@
     "description": [],
     "highlights": [],
     "distances": [],
-    "images": ["/images/projects/reportage-1.jpg", "/images/projects/reportage-2.jpg", "/images/projects/reportage-3.webp", "/images/projects/reportage-4.webp"],
+    "images": [
+      "/images/projects/reportage-1.jpg",
+      "/images/projects/reportage-2.jpg",
+      "/images/projects/reportage-3.webp",
+      "/images/projects/reportage-4.webp"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "shoreline-al-marjan",
+    "name": "Shoreline at Al Marjan Island",
+    "developer": "Damac Properties",
+    "headline": "Shoreline at Al Marjan Island",
+    "location": "Al Marjan Island, Ras Al Khaimah",
+    "unitTypes": "1–5 Bed Apartments & Townhouses",
+    "summary": "Shoreline at Al Marjan Island by Damac Properties in Al Marjan Island, Ras Al Khaimah. Beachfront apartments and townhouses. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/shoreline-1.webp"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "fairmont-residence",
+    "name": "Fairmont Residence",
+    "developer": "Off-Plan",
+    "headline": "Fairmont Residence",
+    "location": "Al Marjan Island, Ras Al Khaimah",
+    "unitTypes": "1–3 Bed Apartments & Villas",
+    "summary": "Fairmont Residence by Fairmont in Al Marjan Island, Ras Al Khaimah. Resort-style residences. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/fairmont-1.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "trio-isle-missoni",
+    "name": "Trio Isle Interiors by Missoni",
+    "developer": "Off-Plan",
+    "headline": "Trio Isle Interiors by Missoni",
+    "location": "Al Jurf, Ghadeer Al Tayr, Abu Dhabi",
+    "unitTypes": "1–3 Bed Apartments",
+    "summary": "Trio Isle Interiors by Missoni by Trio Isle in Al Jurf, Ghadeer Al Tayr, Abu Dhabi. Apartments with interiors designed by Missoni. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/trio-isle-1.webp"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "costa-mare",
+    "name": "Costa Mare",
+    "developer": "Off-Plan",
+    "headline": "Costa Mare",
+    "location": "Al Hamra, Marjan Island, Ras Al Khaimah",
+    "unitTypes": "Studio–3 Bed Apartments",
+    "summary": "Costa Mare by Al Marjan Island in Al Hamra, Marjan Island, Ras Al Khaimah. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/costa-mare-1.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "address-residences",
+    "name": "Address Residences",
+    "developer": "Off-Plan",
+    "headline": "Address Residences",
+    "location": "Dubai Hills, Dubai",
+    "unitTypes": "1–3 Bed Apartments & Studios",
+    "summary": "Address Residences by Address Hotels + Resorts in Dubai Hills, Dubai. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/address-residences-1.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "moonstone",
+    "name": "MoonStone",
+    "developer": "Off-Plan",
+    "headline": "MoonStone",
+    "location": "Al Marjan Island, Ras Al Khaimah",
+    "unitTypes": "Studio–5 Bed Apartments",
+    "summary": "MoonStone by Al Marjan Island in Al Marjan Island, Ras Al Khaimah. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/moonstone-1.webp"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "the-beach-house",
+    "name": "The Beach House",
+    "developer": "Off-Plan",
+    "headline": "The Beach House",
+    "location": "Al Marjan Island, Ras Al Khaimah",
+    "unitTypes": "Studio–3 Bed Apartments & Duplexes",
+    "summary": "The Beach House by Al Marjan Island in Al Marjan Island, Ras Al Khaimah. Beachfront residences. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/beach-house-1.webp"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "sorrento-lagoon-views",
+    "name": "Sorrento Lagoon Views",
+    "developer": "Damac Properties",
+    "headline": "Sorrento Lagoon Views",
+    "location": "Damac Lagoons, Dubai",
+    "unitTypes": null,
+    "summary": "Sorrento Lagoon Views by Damac Properties in Damac Lagoons, Dubai. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/sorrento-1.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "nature-escape-vindera",
+    "name": "Nature Escape Vindera",
+    "developer": "Emaar",
+    "headline": "Nature Escape Vindera",
+    "location": "The Valley, Dubai",
+    "unitTypes": null,
+    "summary": "Nature Escape Vindera by Emaar in The Valley, Dubai. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/vindera-1.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "golf-meadow",
+    "name": "Golf Meadow",
+    "developer": "Emaar",
+    "headline": "Golf Meadow",
+    "location": "Emaar South, Dubai South",
+    "unitTypes": "1–3 Bed Apartments & Penthouses",
+    "summary": "Golf Meadow by Emaar in Emaar South, Dubai South. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/golf-meadow-1.webp"
+    ],
     "featured": false
   }
 ]
