@@ -225,6 +225,21 @@
     "image": "/images/team/shakeel-ahmed.webp"
   },
   {
+    "name": "Mohammed Fatheen",
+    "role": "Content Creator",
+    "image": "/images/team/mohammed-fatheen.webp"
+  },
+  {
+    "name": "Saira Bano",
+    "role": "Admin",
+    "image": "/images/team/saira-bano.webp"
+  },
+  {
+    "name": "Sharakat Ahmed",
+    "role": "Office Assistant",
+    "image": "/images/team/sharakat-ahmed.webp"
+  },
+  {
     "name": "Dawood Khan",
     "role": "Office Assistant",
     "image": "/images/team/dawood-khan.webp"
