@@ -27,7 +27,10 @@ export default function ProjectsPage() {
         {projects.map((p) => (
           <Link key={p.slug} href={`/projects/${p.slug}`} className="group overflow-hidden rounded-lg border border-zinc-200 transition hover:shadow-xl">
             <div className="relative aspect-[16/10] overflow-hidden bg-zinc-100">
-              <Image src={p.images[0]} alt={p.name} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" />
+              <Image src={p.images[0]} alt={p.name} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className={`object-cover transition duration-500 group-hover:scale-105 ${"soldOut" in p && p.soldOut ? "grayscale" : ""}`} />
+              {"soldOut" in p && p.soldOut && (
+                <span className="absolute left-3 top-3 rounded bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">Sold out</span>
+              )}
             </div>
             <div className="p-5">
               <p className="text-xs font-bold uppercase tracking-wider text-brand">{p.developer}</p>

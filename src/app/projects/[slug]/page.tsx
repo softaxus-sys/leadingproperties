@@ -33,7 +33,10 @@ export default async function ProjectPage({ params }: { params: Params }) {
           <Link href="/projects" className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white">
             <ChevronLeft className="h-4 w-4" aria-hidden /> All projects
           </Link>
-          <p className="eyebrow mt-6">{p.developer}</p>
+          <p className="eyebrow mt-6">
+            {p.developer}
+            {"soldOut" in p && p.soldOut && <span className="ml-3 rounded bg-brand px-2 py-0.5 text-xs font-bold uppercase text-white">Sold out</span>}
+          </p>
           <h1 className="mt-2 max-w-3xl text-4xl font-extrabold md:text-5xl">{p.headline}</h1>
           <p className="mt-4 max-w-2xl text-lg text-zinc-200">{p.summary}</p>
           <div className="mt-6 flex flex-wrap gap-6 text-sm">

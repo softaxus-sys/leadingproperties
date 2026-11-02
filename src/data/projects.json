@@ -1,5 +1,107 @@
 [
   {
+    "slug": "binghatti-gateway",
+    "name": "Binghatti Gateway",
+    "developer": "Binghatti",
+    "headline": "Binghatti Gateway",
+    "location": "Al Jaddaf, Dubai",
+    "unitTypes": "Studio–2 Bed Apartments",
+    "summary": "Binghatti Gateway by Binghatti in Al Jaddaf, Dubai. Sold out — contact our advisors for similar opportunities and resale availability.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/binghatti-2.webp"
+    ],
+    "featured": false,
+    "soldOut": true
+  },
+  {
+    "slug": "damac-hills-2-aurum",
+    "name": "Aurum Villas",
+    "developer": "Damac Properties",
+    "headline": "Aurum Villas",
+    "location": "Damac Hills 2, Dubai",
+    "unitTypes": "3–6 Bed Villas",
+    "summary": "Aurum Villas by Damac Properties in Damac Hills 2, Dubai. Sold out — contact our advisors for similar opportunities and resale availability.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/damac-2.jpg"
+    ],
+    "featured": false,
+    "soldOut": true
+  },
+  {
+    "slug": "sobha-hartland-waves",
+    "name": "Waves Opulence",
+    "developer": "Sobha Realty",
+    "headline": "Waves Opulence",
+    "location": "Sobha Hartland, Dubai",
+    "unitTypes": "1–3 Bed Apartments",
+    "summary": "Waves Opulence by Sobha Realty in Sobha Hartland, Dubai. Sold out — contact our advisors for similar opportunities and resale availability.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/sobha-2.png"
+    ],
+    "featured": false,
+    "soldOut": true
+  },
+  {
+    "slug": "meraas-port-de-la-mer",
+    "name": "Port de La Mer",
+    "developer": "Meraas",
+    "headline": "Port de La Mer",
+    "location": "Jumeirah, Dubai",
+    "unitTypes": "1–4 Bed Apartments",
+    "summary": "Port de La Mer by Meraas in Jumeirah, Dubai. Sold out — contact our advisors for similar opportunities and resale availability.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/meraas-2.webp"
+    ],
+    "featured": false,
+    "soldOut": true
+  },
+  {
+    "slug": "reportage-village",
+    "name": "Reportage Village",
+    "developer": "Reportage Properties",
+    "headline": "Reportage Village",
+    "location": "Dubai Land, Dubai",
+    "unitTypes": "Townhouses & Apartments",
+    "summary": "Reportage Village by Reportage Properties in Dubai Land, Dubai. Sold out — contact our advisors for similar opportunities and resale availability.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/reportage-2.jpg"
+    ],
+    "featured": false,
+    "soldOut": true
+  },
+  {
+    "slug": "binghatti-skyrise",
+    "name": "Binghatti Skyrise",
+    "developer": "Binghatti",
+    "headline": "Binghatti Skyrise",
+    "location": "Business Bay, Dubai",
+    "unitTypes": "Studio–3 Bed Apartments",
+    "summary": "Binghatti Skyrise by Binghatti in Business Bay, Dubai. Sold out — contact our advisors for similar opportunities and resale availability.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/flare-2.webp"
+    ],
+    "featured": false,
+    "soldOut": true
+  },
+  {
     "slug": "tilal-binghatti",
     "name": "Tilal Binghatti",
     "developer": "Binghatti",
@@ -323,6 +425,38 @@
     "distances": [],
     "images": [
       "/images/projects/golf-meadow-1.webp"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "creek-edge",
+    "name": "Creek Edge",
+    "developer": "Emaar",
+    "headline": "Creek Edge",
+    "location": "Dubai Creek Harbour, Dubai",
+    "unitTypes": "1–3 Bed Apartments",
+    "summary": "Creek Edge by Emaar in Dubai Creek Harbour, Dubai. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/address-residences-1.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "damac-islands",
+    "name": "Damac Islands",
+    "developer": "Damac Properties",
+    "headline": "Damac Islands",
+    "location": "Dubai Islands, Dubai",
+    "unitTypes": "1–4 Bed Apartments & Villas",
+    "summary": "Damac Islands by Damac Properties in Dubai Islands, Dubai. Contact our advisors for availability, floor plans and payment plans.",
+    "description": [],
+    "highlights": [],
+    "distances": [],
+    "images": [
+      "/images/projects/damac-3.webp"
     ],
     "featured": false
   }
