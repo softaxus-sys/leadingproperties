@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { getProjects, site } from "@/lib/content";
+import { PartnerCarousel } from "@/components/PartnerCarousel";
 
 export const metadata: Metadata = {
   title: "New Projects in Dubai",
@@ -50,12 +51,8 @@ export default function ProjectsPage() {
       <section className="border-t border-zinc-200 py-12">
         <div className="container">
           <h2 className="text-center text-xl font-bold">Our Partners</h2>
-          <div className="mt-8 grid grid-cols-2 items-center gap-8 sm:grid-cols-4 lg:grid-cols-8">
-            {site.developers.map((d) => (
-              <div key={d.name} className="relative h-12">
-                <Image src={d.logo} alt={d.name} fill sizes="150px" className="object-contain" />
-              </div>
-            ))}
+          <div className="mt-8">
+            <PartnerCarousel partners={site.developers} />
           </div>
         </div>
       </section>
