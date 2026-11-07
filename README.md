@@ -57,9 +57,10 @@ the tenant has properties published to the website in the ERP.
 
 ## Enquiries
 
-There is no backend, so the enquiry forms open WhatsApp or the visitor's email client with the
-details pre-filled (`src/components/EnquiryForm.tsx`). To send leads straight into Vrodux CRM
-later, add a server route that relays to the CRM inbound URL and keep that URL server-side.
+Enquiry forms (`src/components/EnquiryForm.tsx`) post to `/api/lead`, which relays the lead to
+the Vrodux CRM inbound webhook set in `VRODUX_LEAD_WEBHOOK_URL` (server-side only). No email is
+sent; the lead appears in Vrodux CRM and its owner is notified there. **Without that setting the
+form shows an error**, so set it before going live. "Chat on WhatsApp" also saves the lead first.
 
 ## Before going live
 
