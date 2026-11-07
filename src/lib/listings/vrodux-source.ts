@@ -77,6 +77,14 @@ function slugify(s: string) {
 
 function toListings(p: ApiProperty, baseUrl: string): Listing[] {
   const images = p.imageUrls.map((path) => `${baseUrl}${path}`);
+  // Every unit in a building shares the building's photos, so without this all its listings
+  // would open on the same cover and look like duplicates. Each listing starts its gallery
+  // at a different photo. Rotation (not random) keeps it stable between page loads.
+  let n = 0;
+  const rotated = () => {
+    const k = images.length ? n++ % images.length : 0;
+    return [...images.slice(k), ...images.slice(0, k)];
+  };
 
   return p.units.flatMap((u) => {
     const offers: Array<{ purpose: "rent" | "sale"; price: number }> = [];
@@ -115,7 +123,7 @@ function toListings(p: ApiProperty, baseUrl: string): Listing[] {
       features: [u.view, u.parking > 0 ? `${u.parking} parking` : null].filter(
         (x): x is string => Boolean(x),
       ),
-      images,
+      images: rotated(),
       featured: false,
     }));
   });
@@ -124,17 +132,20 @@ function toListings(p: ApiProperty, baseUrl: string): Listing[] {
 async function fetchAll(): Promise<Listing[]> {
   const { baseUrl, apiKey, revalidate } = config();
   const all: ApiProperty[] = [];
-  for (let page = 1; page <= 20; page++) {
-    // pageSize is capped at 60 by the API.
-    const res = await fetch(`${baseUrl}/api/real-estate/website/properties?page=${page}&pageSize=60`, {
-      headers: { "X-Api-Key": apiKey },
-      next: { revalidate },
-    });
+  // pageSize is capped at 60 by the API. MAX_PAGES is only a runaway guard.
+  const PAGE_SIZE = 60;
+  const MAX_PAGES = 100;
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const res = await fetch(
+      `${baseUrl}/api/real-estate/website/properties?page=${page}&pageSize=${PAGE_SIZE}`,
+      { headers: { "X-Api-Key": apiKey }, next: { revalidate } },
+    );
     if (!res.ok) throw new Error(`Vrodux listings request failed: HTTP ${res.status}`);
     const body = (await res.json()) as Paged<ApiProperty> | ApiProperty[];
     const items = Array.isArray(body) ? body : body.items;
     all.push(...items);
-    if (Array.isArray(body) || items.length < 60) break;
+    if (Array.isArray(body) || items.length < PAGE_SIZE) break;
+    if (body.totalCount !== undefined && all.length >= body.totalCount) break;
   }
   return all.flatMap((p) => toListings(p, baseUrl));
 }

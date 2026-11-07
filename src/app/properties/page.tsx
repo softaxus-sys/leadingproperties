@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SlidersHorizontal } from "lucide-react";
+import { FilterPanel } from "@/components/FilterPanel";
 import { LocationCombobox } from "@/components/LocationCombobox";
 import { PropertyCard } from "@/components/PropertyCard";
 import {
@@ -54,10 +55,38 @@ function heading(f: ListingFilters) {
   return cat ? `${cat}Properties` : "All Properties";
 }
 
+const PER_PAGE = 12;
+
+/** Link to another page of the same search, keeping every filter. */
+function pageHref(sp: Awaited<SearchParams>, page: number) {
+  const params = new URLSearchParams();
+  for (const [k, v] of Object.entries(sp)) {
+    if (k === "page") continue;
+    for (const x of Array.isArray(v) ? v : [v]) if (x?.trim()) params.append(k, x);
+  }
+  if (page > 1) params.set("page", String(page));
+  const qs = params.toString();
+  return qs ? `/properties?${qs}` : "/properties";
+}
+
+/** 1 … 4 5 [6] 7 8 … 20 */
+function pageNumbers(current: number, total: number): (number | "gap")[] {
+  const out: (number | "gap")[] = [];
+  for (let p = 1; p <= total; p++) {
+    if (p === 1 || p === total || Math.abs(p - current) <= 2) out.push(p);
+    else if (out[out.length - 1] !== "gap") out.push("gap");
+  }
+  return out;
+}
+
 export default async function PropertiesPage({ searchParams }: { searchParams: SearchParams }) {
-  const f = parse(await searchParams);
+  const sp = await searchParams;
+  const f = parse(sp);
   const all = await getListings();
-  const results = filterListings(all, f);
+  const filtered = filterListings(all, f);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+  const page = Math.min(Math.max(1, Math.floor(num(sp.page) ?? 1)), totalPages);
+  const results = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
   const { types, communities } = filterOptions(all);
 
   return (
@@ -67,7 +96,8 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
           <p className="eyebrow">Listings</p>
           <h1 className="mt-2 text-4xl font-extrabold">{heading(f)}</h1>
           <p className="mt-2 text-zinc-300">
-            {results.length} {results.length === 1 ? "property" : "properties"} found
+            {filtered.length} {filtered.length === 1 ? "property" : "properties"} found
+            {totalPages > 1 && ` · page ${page} of ${totalPages}`}
           </p>
         </div>
       </section>
@@ -75,6 +105,13 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
       <section className="container grid gap-8 py-10 lg:grid-cols-[280px_1fr]">
         {/* Filters are a GET form: no JavaScript needed, and results are a shareable URL. */}
         <aside>
+          <FilterPanel
+            activeCount={
+              [f.q, f.purpose, f.category, f.type, f.community, f.beds, f.minPrice, f.maxPrice].filter(
+                (v) => v !== undefined,
+              ).length
+            }
+          >
           <form action="/properties" method="get" className="space-y-4 rounded-lg border border-zinc-200 p-5 lg:sticky lg:top-24">
             <p className="flex items-center gap-2 font-bold">
               <SlidersHorizontal className="h-4 w-4" aria-hidden /> Filter
@@ -140,6 +177,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
               Clear all
             </Link>
           </form>
+          </FilterPanel>
         </aside>
 
         <div>
@@ -153,11 +191,40 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
               </div>
             </div>
           ) : (
-            <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-              {results.map((l) => (
-                <PropertyCard key={l.id} listing={l} />
-              ))}
-            </div>
+            <>
+              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                {results.map((l) => (
+                  <PropertyCard key={l.id} listing={l} />
+                ))}
+              </div>
+              {totalPages > 1 && (
+                <nav aria-label="Pagination" className="mt-10 flex flex-wrap items-center justify-center gap-2">
+                  {page > 1 && (
+                    <Link href={pageHref(sp, page - 1)} className="btn-outline" rel="prev">
+                      Previous
+                    </Link>
+                  )}
+                  {pageNumbers(page, totalPages).map((p, i) =>
+                    p === "gap" ? (
+                      <span key={`gap-${i}`} className="px-2 text-ink-muted">…</span>
+                    ) : p === page ? (
+                      <span key={p} aria-current="page" className="btn-primary min-w-10 justify-center">
+                        {p}
+                      </span>
+                    ) : (
+                      <Link key={p} href={pageHref(sp, p)} className="btn-outline min-w-10 justify-center">
+                        {p}
+                      </Link>
+                    ),
+                  )}
+                  {page < totalPages && (
+                    <Link href={pageHref(sp, page + 1)} className="btn-outline" rel="next">
+                      Next
+                    </Link>
+                  )}
+                </nav>
+              )}
+            </>
           )}
         </div>
       </section>
