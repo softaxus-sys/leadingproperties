@@ -17,7 +17,8 @@ if (apiUrl) {
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  images: { remotePatterns },
+  // Serve images as-is: Vercel free tier caps Image Optimization at 5K transformations.
+  images: { unoptimized: true, remotePatterns },
 };
 
 export default nextConfig;
