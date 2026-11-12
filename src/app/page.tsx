@@ -50,7 +50,7 @@ export default async function HomePage() {
       <section className="section">
         <div className="container grid items-center gap-12 lg:grid-cols-2">
           <IntroSlider
-            images={["/images/site/intro-1.jpg", "/images/site/intro-2.jpg", "/images/site/intro-3.webp", "/images/site/intro-4.png"]}
+            images={["/images/site/intro-1.jpg", "/images/site/intro-2.jpg", "/images/site/intro-3.webp", "/images/site/intro-4.webp"]}
           />
           <div>
             <p className="inline-block border-b border-brand pb-1 text-lg text-brand">Step into the Property of Prosperity</p>
