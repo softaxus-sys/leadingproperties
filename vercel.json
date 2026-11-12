@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/webmail", "destination": "https://webmail.leadingproperties.ae/webmail", "permanent": false },
+    { "source": "/webmail/:path*", "destination": "https://webmail.leadingproperties.ae/webmail/:path*", "permanent": false }
+  ]
+}
