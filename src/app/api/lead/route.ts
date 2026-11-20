@@ -39,6 +39,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
+  // Honeypot: real visitors never fill this hidden field. Pretend success so bots learn nothing.
+  if (typeof (body as Record<string, unknown>).website === "string" && (body as Record<string, string>).website.trim()) {
+    return NextResponse.json({ ok: true });
+  }
+
   const payload: Record<string, string> = {};
   for (const key of ALLOWED_FIELDS) {
     const value = (body as Record<string, unknown>)[key];

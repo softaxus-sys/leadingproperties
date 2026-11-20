@@ -40,6 +40,40 @@
   }
 }
 
+/* Aldar Greenwood landing page */
+@layer components {
+  .gw-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-7 py-3.5 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gw-gold;
+  }
+  .gw-btn-gold {
+    @apply gw-btn bg-gw-gold text-gw-night hover:bg-[#dac995];
+  }
+  .gw-btn-ghost {
+    @apply gw-btn border border-white/50 text-white hover:bg-white hover:text-gw-night;
+  }
+  .gw-btn-dark {
+    @apply gw-btn bg-gw-night text-white hover:bg-gw-forest;
+  }
+}
+@keyframes gw-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.gw-rise {
+  animation: gw-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gw-rise {
+    animation: none;
+  }
+}
+
 /* Partner logo strip: two identical copies side by side, so sliding by half loops seamlessly. */
 @keyframes marquee {
   to {

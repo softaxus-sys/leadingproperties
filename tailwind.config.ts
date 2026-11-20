@@ -12,6 +12,7 @@ const config: Config = {
           dark: "#B81C14",
           light: "#FDECEB",
         },
+        gw: { night: "#0B130F", deep: "#101C16", forest: "#1B3027", gold: "#C9B27C", "gold-deep": "#8F7A45", sand: "#F3EDE0", mist: "#D9D4C6" },
         ink: {
           DEFAULT: "#111111",
           soft: "#3F3F46",
@@ -20,6 +21,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
         display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
       },
     },
