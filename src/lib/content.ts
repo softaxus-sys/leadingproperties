@@ -30,6 +30,7 @@ export const nav = [
     href: "/projects",
     children: [
       { label: "All Projects", href: "/projects" },
+      { label: "Aldar Greenwood", href: "/aldar-greenwood-dubai-silicon-oasis" },
       { label: "Tilal Binghatti", href: "/projects/tilal-binghatti" },
       { label: "Damac", href: "/projects/damac" },
     ],

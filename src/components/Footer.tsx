@@ -54,6 +54,7 @@ export function Footer() {
               ["Properties for Rent", "/properties?purpose=rent"],
               ["Properties for Sale", "/properties?purpose=sale"],
               ["New Projects", "/projects"],
+              ["Aldar Greenwood", "/aldar-greenwood-dubai-silicon-oasis"],
               ["About Us", "/about"],
               ["Contact Us", "/contact"],
               ["Privacy Policy", "/privacy-policy"],
