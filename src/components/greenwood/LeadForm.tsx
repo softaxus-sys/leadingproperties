@@ -3,13 +3,9 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { CAMPAIGN, propertyOptions } from "@/data/greenwood";
+import { COUNTRIES, DEFAULT_COUNTRY, POPULAR_COUNT, countryByIso } from "@/data/countries";
 import { getAttribution, track } from "@/lib/greenwood-track";
 
-const COUNTRIES = [
-  ["+971", "UAE"], ["+966", "KSA"], ["+965", "Kuwait"], ["+974", "Qatar"], ["+973", "Bahrain"], ["+968", "Oman"],
-  ["+44", "UK"], ["+91", "India"], ["+92", "Pakistan"], ["+1", "US/CA"], ["+7", "Russia"], ["+49", "Germany"],
-  ["+33", "France"], ["+86", "China"], ["+20", "Egypt"], ["+962", "Jordan"], ["+27", "S. Africa"], ["+234", "Nigeria"],
-] as const;
 
 const PURPOSES = ["End Use", "Investment", "Both"];
 const BUDGETS = ["Below AED 2.5M", "AED 2.5M–3M", "AED 3M–4M", "AED 4M–5M", "Above AED 5M"];
@@ -25,7 +21,7 @@ export function LeadForm({ variant, source }: { variant: Variant; source: string
   const id = useId();
   const full = variant === "full";
   const [f, setF] = useState({
-    name: "", code: "+971", phone: "", email: "", type: "Not Decided",
+    name: "", country: DEFAULT_COUNTRY, phone: "", email: "", type: "Not Decided",
     purpose: "", budget: "", contact: "WhatsApp", consent: false, website: "", // "website" is a honeypot
   });
   const [error, setError] = useState<string | null>(null);
@@ -56,7 +52,7 @@ export function LeadForm({ variant, source }: { variant: Variant; source: string
     if (!f.consent) return setError("Please confirm the privacy consent to continue.");
     setError(null);
 
-    const fullPhone = `${f.code}${digits}`;
+    const fullPhone = `${countryByIso(f.country)[2]}${digits}`;
     // Same number registered recently from this browser: show success without creating a second lead.
     try {
       const prev = JSON.parse(localStorage.getItem(SENT_KEY) || "{}") as Record<string, number>;
@@ -153,10 +149,17 @@ export function LeadForm({ variant, source }: { variant: Variant; source: string
       <div>
         <label htmlFor={field("phone")} className={labelCls}>Mobile Number</label>
         <div className="flex gap-2">
-          <select aria-label="Country code" className={`${inputCls} !w-[6.5rem] shrink-0`} value={f.code} onChange={(e) => set("code", e.target.value)}>
-            {COUNTRIES.map(([c, n]) => (
-              <option key={c + n} value={c}>{c} {n}</option>
-            ))}
+          <select aria-label="Country code" className={`${inputCls} !w-[7.5rem] shrink-0`} value={f.country} onChange={(e) => set("country", e.target.value)}>
+            <optgroup label="Popular">
+              {COUNTRIES.slice(0, POPULAR_COUNT).map(([iso, name, dial]) => (
+                <option key={iso} value={iso}>{dial} {name}</option>
+              ))}
+            </optgroup>
+            <optgroup label="All countries">
+              {COUNTRIES.slice(POPULAR_COUNT).map(([iso, name, dial]) => (
+                <option key={iso} value={iso}>{dial} {name}</option>
+              ))}
+            </optgroup>
           </select>
           <input id={field("phone")} type="tel" inputMode="tel" dir="ltr" className={inputCls} value={f.phone} onChange={(e) => set("phone", e.target.value)} autoComplete="tel-national" required />
         </div>
